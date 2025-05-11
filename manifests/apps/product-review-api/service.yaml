@@ -1,0 +1,16 @@
+---
+# Source: product-review-api/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: release-product-review-api-service
+  namespace: product-review-api
+spec:
+  selector:
+    app: product-review-api
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000
+      nodePort: 30088
+  type: NodePort
