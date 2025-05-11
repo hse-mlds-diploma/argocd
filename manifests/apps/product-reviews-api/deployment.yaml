@@ -1,0 +1,29 @@
+---
+# Source: product-reviews-api/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: release-product-reviews-api
+  namespace: product-reviews-api
+  labels:
+    app: product-reviews-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: product-reviews-api
+  template:
+    metadata:
+      labels:
+        app: product-reviews-api
+    spec:
+      containers:
+      - name: product-reviews-api
+        image: hotspurs/product-reviews-api:cb7f729
+        ports:
+        - containerPort: 8000
+        resources:
+          requests:
+            cpu: 100m
+          limits:
+            cpu: 600m
