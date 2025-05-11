@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: demo-app
-        image: hotspurs/demo-app:6f5e0c3
+        image: hotspurs/demo-app:21c72b8
         ports:
         - containerPort: 80
         resources:
@@ -27,3 +27,6 @@ spec:
             cpu: 100m
           limits:
             cpu: 600m
+        env:
+          - name: API_KEY
+            value: <vault:secret/services/demo-app/TEST#KEY>
