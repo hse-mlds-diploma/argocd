@@ -1,8 +1,0 @@
----
-# Source: product-review-api/templates/namespace.yaml
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: product-review-api
-  labels:
-    name: product-review-api
