@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: product-reviews-api
-        image: hotspurs/product-reviews-api:cb7f729
+        image: hotspurs/product-reviews-api:a8ea2f7
         ports:
         - containerPort: 8000
         resources:
@@ -27,3 +27,6 @@ spec:
             cpu: 100m
           limits:
             cpu: 600m
+        env:
+          - name: API_KEY
+            value: <vault:secret/services/product-reviews-api/TEST#KEY>
