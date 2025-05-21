@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: product-reviews-api
-        image: hotspurs/product-reviews-api:7a9afdb
+        image: hotspurs/product-reviews-api:0c680fb
         ports:
         - containerPort: 8000
         resources:
